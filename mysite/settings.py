@@ -26,11 +26,8 @@ SECRET_KEY = 'django-insecure-2=bxbtvqbdxrbfetzeex-0v=es)@j^38@%y-j83ps7b+64txj3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTOCOL", 'https')
-ALLOWED_HOSTS = ["knowaboutjyoti.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "tutorialsdjango1.herokuapp.com"]
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 # Application definition
 
@@ -119,8 +116,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
-
-STATIC_URL = 'static/'
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
