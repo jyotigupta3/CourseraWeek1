@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-2=bxbtvqbdxrbfetzeex-0v=es)@j^38@%y-j83ps7b+64txj3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTOCOL", 'https')
-ALLOWED_HOSTS = ["127.0.0.1", "tutorialsdjango1.herokuapp.com"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -75,10 +75,20 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "d3ppah4a08eto5",
+        "USER": "quohqmrfvbxkcn",
+        "PASSWORD": "3b2b4ed3bf1633052f6015e25867bd4b58a35eecc158897b8b1c96e8d06680fa",
+        "HOST": "ec2-52-20-166-21.compute-1.amazonaws.com",
+        "PORT": "5432",
     }
 }
 
