@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.template import loader
 from .models import Question
 
@@ -19,7 +19,14 @@ def owner(request):
 
 
 def detail(request, question_id):
-    return HttpResponse("You're looking at question %s." % question_id)
+    try:
+        question = Question.objects.get(pk=question_id)
+        context = {"question": "You're looking at question %s." % question}
+
+    except Exception as e:
+        raise Http404("Question doesn't exist.", e)
+
+    return render(request=request, context=context, template_name="polls/detail.html")
 
 
 def results(request, question_id):
